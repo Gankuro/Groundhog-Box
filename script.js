@@ -11,7 +11,7 @@ img_char.onload = function(){
 };
 document.onkeypress = function(event){
 	switch(event.keyCode){
-		case 119: char_y-=32;break;
+		case 119: char_y-=32;snd_vic.play();break;
 		case 97: char_x-=32;break;
 		case 115: char_y+=32;break;
 		case 100: char_x+=32;break;
