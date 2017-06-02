@@ -3,7 +3,9 @@ var ctx = canvas.getContext("2d");
 var char_x = 32;
 var char_y = 32;
 var img_char = new Image();
+var img_floor = new Image();
 img_char.src = 'src/char.png';
+img_floor.src = 'src/floor.png';
 var snd_vic = new Audio('src/victory.mp3');
 var level = [
 	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -41,7 +43,7 @@ function draw(){
 	for(var i = 0; i < level.length; i++){
 		for(var x = 0; x < level[0].length; x++){
 			if(level[i][x] == 1){
-				ctx.fillRect(i*32, x*32, (i+1)*32, (x+1)*32);
+				ctx.drawImage(img_floor, i*32, x*32);
 			}
 		}
 	}
