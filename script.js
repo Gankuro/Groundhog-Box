@@ -2,10 +2,14 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var char_x = 32;
 var char_y = 32;
+var data = createElement('TABLE');
+var imgs = data.insertRow();
 var img_char = new Image();
 var img_floor = new Image();
 img_char.src = 'src/char.png';
+img_char.parent = imgs;
 img_floor.src = 'src/floor.png';
+img_floor.parent = imgs;
 var snd_vic = new Audio('src/victory.mp3');
 var level = [
 	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -24,7 +28,7 @@ var level = [
 	[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
 	[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
-img_char.onload = function(){
+imgs.onload = function(){
 	draw();
 };
 document.onkeypress = function(event){
